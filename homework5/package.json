@@ -1,0 +1,37 @@
+{
+  "name": "homework5",
+  "version": "1.0.0",
+  "description": "homework5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": " webpack serve --mode development",
+    "build": " webpack build --mode production",
+    "clean": " rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desherzy/CHI-IT-Academy.git"
+  },
+  "author": "Roman Medvid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desherzy/CHI-IT-Academy/issues"
+  },
+  "homepage": "https://github.com/desherzy/CHI-IT-Academy#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
+    "@babel/preset-react": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "webpack-dev-server": "^5.2.3"
+  }
+}

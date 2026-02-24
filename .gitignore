@@ -25,8 +25,8 @@ npm-cache/
 # ===============================
 # Build / dist
 # ===============================
-# dist/
-# build/
+dist/
+build/
 out/
 coverage/
 

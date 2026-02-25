@@ -10,8 +10,11 @@ export default function HomePage() {
         <Typography variant='h2' component='h1' gutterBottom fontWeight='bold'>
           Welcome to the Home Page!
         </Typography>
+        <Typography variant='h5' color='text' paragraph>
+          There might be a description of the application that Welcoming you.
+        </Typography>
         <Typography variant='h5' color='text.secondary' paragraph>
-          some text here
+          But if you there, I think you know already know what must be there 0.o
         </Typography>
         <Box sx={{ mt: 4 }}>
           <Button variant='contained'

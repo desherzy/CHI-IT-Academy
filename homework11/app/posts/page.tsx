@@ -2,7 +2,8 @@ import { Box,
     Container, 
     Typography, 
     Stack, 
-    Card, 
+    Card,
+    Button, 
     CardContent 
 } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
@@ -10,8 +11,8 @@ import PaginationItem from "@mui/material/PaginationItem";
 import Link from "next/link";
 
 async function getExhibits(page: number) {
-    // URL is a mock API that returns paginated data of exhibits
-    const res = await fetch(`https://66367566415f4e1a.api.mocki.io/exhibits?page=${page}&limit=10`, {
+    // temporary API endpoint for demonstration
+    const res = await fetch(`api/exhibits?page=${page}&limit=10`, {
         cache: "no-store",
     });
 
@@ -32,10 +33,15 @@ export default async function PostsPage({ searchParams, }: { searchParams: { pag
 
             <Stack spacing={3}>
                 {data.map((exhibit: any) => (
-                    <Card key={exhibit.id}>
+                    <Card key={exhibit.id} variant="outlined" sx={{ borderRadius: 2 }}>
                         <CardContent>
-                            <Typography variant="h6">{exhibit.title}</Typography>
+                            <Typography variant="h6" color="primary">{exhibit.title}</Typography>
                             <Typography color="text.secondary">{exhibit.description}</Typography>
+                        </CardContent>
+                        <CardContent>
+                            <Button size="small" component={Link} href={`/exhibits/${exhibit.id}`}>
+                                Show more
+                            </Button>
                         </CardContent>
                     </Card>
                 ))}
@@ -44,6 +50,7 @@ export default async function PostsPage({ searchParams, }: { searchParams: { pag
             <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
                 <Pagination page={currentPage} 
                     count={totalPages}
+                    color="primary"
                     renderItem={(item) => (
                         <PaginationItem component={Link} 
                         href={`/posts?page=${item.page}`}

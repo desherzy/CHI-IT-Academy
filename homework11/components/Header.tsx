@@ -1,9 +1,26 @@
 'use client';
 
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
 import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
+    const [isAuth, setIsAuth] = useState(false);
+    const router = useRouter();
+
+    useEffect(() => {
+        setIsAuth(!!Cookies.get('token'));
+        
+    }, []);
+    const handleLogout = () => {
+        Cookies.remove('token');
+        setIsAuth(false);
+        router.push('/login');
+        router.refresh();
+    };
+
     return(
         <AppBar position='static' sx={{ mb: 4 }}>
             <Container maxWidth='md'>
@@ -17,6 +34,11 @@ export default function Header() {
                     <Button color='inherit' component={Link} href='/posts'>
                         Posts
                     </Button>
+                    {isAuth ? (
+                        <Button color="inherit" onClick={handleLogout}>Log out</Button>
+                    ) : (
+                        <Button color="inherit" href="/login" component={Link}>Log in</Button>
+                    )}
                 </Toolbar>
             </Container>
         </AppBar>

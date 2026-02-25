@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SocketProvider from "@/components/SocketProvider";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import Header from "@/components/Header";
 
@@ -15,10 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeRegistry>
-          <Header />
-          {children}
-        </ThemeRegistry>
+        <SocketProvider>
+          <ThemeRegistry>
+            <Header />
+            {children}
+          </ThemeRegistry>
+        </SocketProvider>
       </body>
     </html>
   );

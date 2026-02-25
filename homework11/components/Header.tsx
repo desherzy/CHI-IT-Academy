@@ -1,10 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Cookies from 'js-cookie';
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
+import { AppBar, 
+    Toolbar, 
+    Typography, 
+    Button, 
+    Container 
+} from '@mui/material';
+import ToggleTheme from './ToggleTheme';
+import Link from 'next/link';
 
 export default function Header() {
     const [isAuth, setIsAuth] = useState(false);
@@ -25,6 +31,8 @@ export default function Header() {
         <AppBar position='static' sx={{ mb: 4 }}>
             <Container maxWidth='md'>
                 <Toolbar disableGutters>
+                    <ToggleTheme />
+                    
                     <Typography variant='h6' sx={{ flexGrow: 1 }}>
                         Homework 11
                     </Typography>

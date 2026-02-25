@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import SocketProvider from "@/components/SocketProvider";
-import ThemeRegistry from "@/components/ThemeRegistry";
+import AppThemeProvider from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
@@ -17,10 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SocketProvider>
-          <ThemeRegistry>
+          <AppThemeProvider>
             <Header />
             {children}
-          </ThemeRegistry>
+          </AppThemeProvider>
         </SocketProvider>
       </body>
     </html>

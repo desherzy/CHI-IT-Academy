@@ -1,0 +1,25 @@
+{
+  "name": "homework13",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node-dev --respawn --transpile-only index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.4",
+    "pg": "^8.19.0",
+    "reflect-metadata": "^0.2.2",
+    "routing-controllers": "^0.11.3",
+    "typeorm": "^0.3.28"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
